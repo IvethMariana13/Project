@@ -105,7 +105,20 @@ Use proxyImage to get the class object when necessary.
 Step 4
 Verify the output
  
+ First change for issue_4321A
 Responsability
+You have objects that work as handlers
+A request is generated and sent to the first object, if it cannot carry it out, then the next object is sent to be called and so on. For this, if no object can carry out the request then we will have a default or exception behavior.
+Implementation
+We have created an abstract class AbstractLogger with a logger level. Then, we have created three types of loggers by extending the AbstractLogger. Each logger checks the level of the message at its level and prints accordingly; otherwise, it does not print and passes the message to the next logger 
+Step 1: Create an abstract logger class.
+Create an abstract recorder class.
+Step 2
+Create concrete classes by extending the registrar. 
+Step 3
+Create different types of loggers. Assign them error levels and set the next logger in loggers. The next logger in each logger represents the part of the chain. 
+Step 4
+Verify the output 
 You have objects that work as handlers
 A request is generated and sent to the first object, if it cannot carry it out, then the next object is sent to be called and so on. For this, if no object can carry out the request then we will have a default or exception behavior.
 Implementation
