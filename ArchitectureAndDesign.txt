@@ -1,4 +1,6 @@
 Architecture and Design
+First change for main branch
+
 Principles of Object Oriented Design
 SOLID
 SOLID stands for:
@@ -7,6 +9,27 @@ SOLID stands for:
 •	L - Liskov Substitution Principle
 •	I - Interface Segregation Principle
 •	D - Dependency Inversion Principle
+
+SOLID stands for:
+•	S - Single-Responsibility Principle
+•	O- Open-closed Principle
+•	L - Liskov Substitution Principle
+•	I - Interface Segregation Principle
+•	D - Dependency Inversion Principle
+
+First change for issue_1234
+
+Single-responsibility Principle
+Each class must perform a single functionality and must have a single responsibility. It should also only be responsible for a single part of the system.
+Open-closed Principle
+The model must be open to extension but closed for modification. The basic functionality of the system is that is protected, to add functionality we have to write new code to modify existing code. To achieve this we can use inheritance and polymorphism tools.
+Liskov Substitution Principle
+Inheritance is applied in such a way that the derived classes must be completely substitutable by base classes. Any class that is a child of another class must be usable as if it were the same parent. We must be able to replace a class B by a class A without interrupting the behavior of the program.
+Interface Segregation Principle
+Larger interfaces are divided into smaller interfaces, it is better to have many small classes and specialties than one huge class.  This way we avoid the client having to use methods that it does not want to use, a situation that should always be avoided.
+Dependency Inversion Principle
+We must use abstraction (abstract classes and interfaces) instead of concrete implementations. High-level modules should not depend on the low-level module, but both depend on abstraction. Reduce the decoupling between software systems. The communication between system components is always between interfaces and this allows having freedom of implementations in each element.
+
 Single-responsibility Principle
 Each class must perform a single functionality and must have a single responsibility. It should also only be responsible for a single part of the system.
 Open-closed Principle
