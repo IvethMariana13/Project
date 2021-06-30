@@ -1,0 +1,188 @@
+Architecture and Design
+Principles of Object Oriented Design
+SOLID
+SOLID stands for:
+•	S - Single-Responsibility Principle
+•	O- Open-closed Principle
+•	L - Liskov Substitution Principle
+•	I - Interface Segregation Principle
+•	D - Dependency Inversion Principle
+Single-responsibility Principle
+Each class must perform a single functionality and must have a single responsibility. It should also only be responsible for a single part of the system.
+Open-closed Principle
+The model must be open to extension but closed for modification. The basic functionality of the system is that is protected, to add functionality we have to write new code to modify existing code. To achieve this we can use inheritance and polymorphism tools.
+Liskov Substitution Principle
+Inheritance is applied in such a way that the derived classes must be completely substitutable by base classes. Any class that is a child of another class must be usable as if it were the same parent. We must be able to replace a class B by a class A without interrupting the behavior of the program.
+Interface Segregation Principle
+Larger interfaces are divided into smaller interfaces, it is better to have many small classes and specialties than one huge class.  This way we avoid the client having to use methods that it does not want to use, a situation that should always be avoided.
+Dependency Inversion Principle
+We must use abstraction (abstract classes and interfaces) instead of concrete implementations. High-level modules should not depend on the low-level module, but both depend on abstraction. Reduce the decoupling between software systems. The communication between system components is always between interfaces and this allows having freedom of implementations in each element.
+
+Encapsulate
+Each object is responsible for its own information and state and the only way it can be modified is through an object's own methods, the methods should not be accessible from outside and can be modified only by calling the corresponding functions.
+We must also encapsulate code that is likely to change in the future.
+It serves to keep the system safe from unwanted uses, another benefit is that it is easy to test and maintain the proper encapsulated code. 
+Inheritance
+It is based on reusability; we can make hierarchies between classes. Common attributes and methods can be reusable.
+DRY
+It consists of not writing duplicate code.
+If you have a block of code in more than two places, you should consider converting it to a separate method, as well as if you use a value more than once, the ideal is to make it public.  
+The benefit we will have is maintenance, but it should not be abused, duplication is not for the code but for the functionality.
+Programming for Interface not implementation
+Always program for the interface and not for the implementation, this way we can have a flexible code that can work with any new interface implementation.
+The interface type in variables, return types of a method or argument type.
+
+
+Design Patterns
+It is a plan of action along with a description of a problem with a way to solve it. 
+It defines a solution to a recurring problem and this solution can be implemented in several ways depending on the technology. 
+The Patterns by classified in three fields 
+Creational Patterns
+They are in charge of solving problems involving the creation of objects. Their goal is to provide solutions to create concrete instances of certain objects.
+Structural Patterns
+They help in setting up relationships between objects and classes. The concept of inheritance is used to compose interfaces and define ways to obtain new functionalities in objects. 
+Behavioral Patterns
+They help to realize interaction between classes and object, so that we can distribute responsibilities in an organized way, these patterns refer specifically to communication. 
+MVC Design Pattern
+It allows you to create better applications that can be understood and maintained in the future. 
+Model 
+It is responsible for relating the data with which an application will operate such as queries, updates, creates and deletes, it is known as business logic. It contains only the pure data of the application; it does not contain any logic that describes how to present the data to a user. It is the representation of an object that carries data, it can also have logic to update the controller if the data changes.
+View
+Each graphical element that interacts with the user, its function is to be the layer that obtains information about the events that the user calls. The view knows how to access the model data, but does not know what it means or how the user can manipulate it. It represents the visualization of the data that the model has.
+Controller
+It responds to events or actions performed by the user to the view, is responsible for choosing which view to show to the user, executes the appropriate reaction to other events, as well as it is responsible for controlling the data flow in the model object and updates the view every time the data changes. 
+ 
+Creational Patterns
+Factory
+This pattern consists of creating an object without having to expose the creation logic to the client and obtaining a newly created record using a common interface.
+Implementation
+We must create an interface.
+ 
+Within it, concrete classes will be created implementing the same interface 
+Then a Factory must be created to generate an object of a specific class based on the given information. 
+
+ 
+We will then use Factory to obtain an object of a particular class by passing information as type.
+ 
+Finally, we verify the output.
+This type of pattern can be used when the client requests a larger project, since we can use it to call only the methods that are requested.
+Singleton
+The purpose of using the singleton pattern is to ensure that there is only one instance of a particular class, thus making it impossible to instantiate more than one instance of a class or object. It is used when we need to have exclusively a concrete class, so that we can have access from any part of the program.
+It can be used when we want to access resources individually, which need to be controlled from the whole application. 
+Implementation
+It is about making the constructor private and not accessible from outside, in this way, we will have control over the instantiation of the same, and that is to say, it is the class itself who gains control of how it is instantiated. 
+Step 1	
+Create a singleton Class   
+Step 2
+Get the only object from the singleton class.
+ 
+Step 3
+Verify the output
+ 
+Structural Patterns
+Proxy
+What it tells us is to have a wrapper that allows us to have access to the real object or the final object we want to manipulate. 
+It encapsulates the complexity of the target in a wrapper.
+Step 1: Create an interface.
+ .
+Step 2: Create concrete classes implementing the same interface. 
+ 
+Step 3
+Use proxyImage to get the class object when necessary. 
+Step 4
+Verify the output
+ 
+Responsability
+You have objects that work as handlers
+A request is generated and sent to the first object, if it cannot carry it out, then the next object is sent to be called and so on. For this, if no object can carry out the request then we will have a default or exception behavior.
+Implementation
+We have created an abstract class AbstractLogger with a logger level. Then, we have created three types of loggers by extending the AbstractLogger. Each logger checks the level of the message at its level and prints accordingly; otherwise, it does not print and passes the message to the next logger 
+Step 1: Create an abstract logger class.
+Create an abstract recorder class.
+Step 2
+Create concrete classes by extending the registrar. 
+Step 3
+Create different types of loggers. Assign them error levels and set the next logger in loggers. The next logger in each logger represents the part of the chain. 
+Step 4
+Verify the output 
+
+
+Layerd Architecture
+One of the most common patterns, it is also known as the n-tier architecture pattern. This is a de facto standard pattern for most Java applications. It closely matches traditional IT organizational and communication structures, thus making it a natural choice for most commercial application development. 
+Pattern Description
+The components witin the pattern are organized in horizontal layers, where each layer is responsible for a specific role, although the number of layers a system must have is not specified, most architectures consist of standard layers (presentation, business, persistence and database). Although some smaller applications may have three layers, while commercial applications may have more than five layers. 
+ 
+Each layer of the pattern has a function and a responsibility within the application, as well as each layer forms an abstraction around the work it must perform to obtain customer satisfaction. No layer should be concerned about the function to be performed by the other layer, i.e. there should be a separation of concerns between the components. Having a classification of components facilitates the creation of effective roles and responsibility models in the architecture, thus facilitating the development, testing, control and maintenance of applications
+
+Key Concepts
+Closed layer
+A closed layer means that a request passes from one layer to another, it must pass through the layer below it to reach the next layer.  
+Layers of isolation
+Changes made in one layer of the architecture do not affect the components of other layers. The change is isolated to the components of that layer and if there were an isolated layer the same thing would happen. We can refer to the fact that each stage is independent of the other layers, so it has little or no knowledge of the inner workings of other layers.Considerations
+It is a solid general-purpose pattern, so it is a good starting point for most applications, especially when you are not sure which architecture pattern is the most suitable for your application. 
+The first thing to consider is what is known as sinkhole anti-pattern. This anti-pattern describes where requests flow between multiple layers, as a simple processing of with little or no processing performed within each layer. Every layered architecture will have at least some scenarios that fall into the sinkhole anti-pattern architecture.
+This pattern tends to lend itself to monolithic applications, even if you split the presentation layer and business layers into separate deployable units. This can pose some potential problems in terms of implementations, robustness and overall reliability. 
+Pattern Analysis
+The rating of each feature is based on the natural tendency of that feature as a capability based on a typical implementation of the pattern, generally, as the pattern is known.
+Overall agility
+Rating: low
+Analysis: It has the agility with the ability to respond quickly to a constantly changing environment and although you can isolate through the isolation feature layers, there is still problem to realize change in this pattern due to the monolithic nature of most applications.
+Ease of implementation
+Rating: Low
+Analysis: It has a lot to do with how we do the implementation, as it can become a problem for large applications. Since a small change can require a new implementation of the entire application, so implementations take longer than they should. This pattern does not lend itself easily to a continuous delivery pipeline.  
+Testability
+Rating: high
+Analysis: Because the components belong to specific layers of the architecture, other layers can be simulated or removed, which makes this pattern easy to test. 
+Performance
+Rating: low
+Analysis: Although some layered architectures may work well, this pattern shows inefficiency in high-performance applications, since it has to go through multiple layers to fulfill a request. 
+Scalability
+Rating: low
+Analysis: They are generally difficult to scale, due to the tendency of monolithic and tightly coupled implementations to the pattern. Although a layered architecture can be scaled by dividing the layers into separate physical implementations at various nodes, the granularity is very large, which makes it costly to scale.
+
+
+Ease of development
+Rating: high
+Analysis: Because it is a well-known pattern and is not so complex to implement, since most companies develop applications by separating skill sets by layers, this pattern becomes a good choice for most commercial developments.
+MVC Architecture
+What is MVC Architecture?
+The components of the mvc pattern architecture are designed to handle different aspects of an application under development. This pattern serves to separate the presentation layer from the business logic.It is one of the most widely used patterns for web and application development.
+The Model View Controller design pattern separates concerns into one of 3 buckets:
+•	Model
+Stores and manages data.
+•	View 
+Graphical user interface, the view is a visual representation of the data as a graph, diagram, and table.
+The view contains the functionality to interact directly with the user.
+•	Controller
+It is the brain of the application, as it connects the model and the view. The controller receives the input from the view, uses logic to translate the input into a demand from the model, the model takes the data, and the controller passes the data from the model to the view for the user to see on a nice screen.
+ 
+Benefits of MVC
+- Traditionally used for graphical user interfaces (GUI)
+- Popular in web applications
+- MVC responsibilities are split between client and server, compatible with web application architecture
+- MVC is a useful design pattern when planning development
+- Separation of concerns: that code is divided according to function in model, view or controller repository
+- Works well with Ruby on Rails
+- Loosely coupled
+- Eliminates unnecessary dependencies
+- Reusable without modification
+- MVC makes model classes reusable without modification
+- Code reusability
+- Extensible code
+- High cohesion
+- Easier to maintain or modify
+- Supports multiple views
+- Each part can be tested independently (model, view, controller).
+Separation of interests
+The mvc design allows the separation of interests, since the logic is divided among the 3 cubes, so that each cube can act independently.
+The model, the view and the controller do not depend on each other. Generally, software is developed in teams, commonly there is a designer, an engineer and a database architect. By having a separation of interests, each team member can work on his or her cube at the same time, since the architecture is divided into cubes. By separating interests, we have greater ease of maintenance.
+Loosely coupled
+The model, view and controller act independently of each other.  That is to say, a developer can modify some part and the other 2 parts must continue working without receiving modifications. 
+By making models and views independent we obtain that the code is simple and easy to understand and facilitates maintenance.  
+
+
+
+
+
+   
+
