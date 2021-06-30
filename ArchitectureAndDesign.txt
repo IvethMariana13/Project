@@ -51,7 +51,14 @@ View
 Each graphical element that interacts with the user, its function is to be the layer that obtains information about the events that the user calls. The view knows how to access the model data, but does not know what it means or how the user can manipulate it. It represents the visualization of the data that the model has.
 Controller
 It responds to events or actions performed by the user to the view, is responsible for choosing which view to show to the user, executes the appropriate reaction to other events, as well as it is responsible for controlling the data flow in the model object and updates the view every time the data changes. 
- 
+
+Second change for main branch
+Creational Patterns
+Factory
+This pattern consists of creating an object without having to expose the creation logic to the client and obtaining a newly created record using a common interface.
+Implementation
+We must create an interface.
+
 Creational Patterns
 Factory
 This pattern consists of creating an object without having to expose the creation logic to the client and obtaining a newly created record using a common interface.
